@@ -25,5 +25,8 @@ RUN git clone --recursive https://github.com/sass/node-sass.git && \
 # add binary path of node-sass to .npmrc
 RUN touch $HOME/.npmrc && echo "sass_binary_cache=${SASS_BINARY_PATH}" >> $HOME/.npmrc
 
+# add Prettier
+RUN npm install prettier -g
+
 ENV SKIP_SASS_BINARY_DOWNLOAD_FOR_CI true
 ENV SKIP_NODE_SASS_TESTS true
